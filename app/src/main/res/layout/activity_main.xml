@@ -7,19 +7,54 @@
         <variable
                 name="viewModel"
                 type="com.ridvan.apping.viewmodel.AppINGViewModel"/>
+
+        <variable
+                name="activity"
+                type="com.ridvan.apping.view.ui.MainActivity"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
             tools:context=".view.ui.MainActivity">
 
-        <android.support.v7.widget.RecyclerView
-                android:id="@+id/my_recycler_view"
+        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="vertical"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/information"/>
+
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <EditText
+                        android:id="@+id/editText"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:hint="@string/username"/>
+
+                <Button
+                        android:layout_width="wrap_content"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> activity.onClickButton()}"
+                        android:text="@string/get"/>
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/myRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical"/>
+        </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 </layout>

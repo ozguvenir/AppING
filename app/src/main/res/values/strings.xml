@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AppING</string>
+    <string name="get">Get</string>
+    <string name="username">username</string>
+    <string name="information">You can see github repositories for the username which you have entered in the following
+        input view.
+    </string>
 </resources>

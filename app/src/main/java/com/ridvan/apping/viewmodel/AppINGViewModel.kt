@@ -17,10 +17,9 @@ import retrofit2.Response
 class AppINGViewModel : ViewModel() {
 
     private val projects = MutableLiveData<List<Project>>()
-
-    fun getProjectList(userId: String) {
+    fun getProjectList(userName: String) {
         val appINGService = ServiceContext.instance!!.retrofit.create(AppINGService::class.java)
-        val call = appINGService.getProjectDetails(userId)
+        val call = appINGService.getProjectDetails(userName)
         call.enqueue(object : Callback<List<Project>> {
             override fun onFailure(call: Call<List<Project>>, t: Throwable) {
                 projects.value = null
@@ -35,5 +34,4 @@ class AppINGViewModel : ViewModel() {
     fun getProjects(): LiveData<List<Project>> {
         return projects
     }
-
 }
