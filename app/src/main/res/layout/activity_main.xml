@@ -3,13 +3,17 @@
 
     <data>
         <import type="android.view.View"/>
+
+        <variable
+                name="viewModel"
+                type="com.ridvan.apping.viewmodel.AppINGViewModel"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".MainActivity">
+            tools:context=".view.ui.MainActivity">
 
         <android.support.v7.widget.RecyclerView
                 android:id="@+id/my_recycler_view"

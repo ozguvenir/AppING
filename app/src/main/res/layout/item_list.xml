@@ -3,6 +3,10 @@
 
     <data>
         <import type="android.view.View"/>
+
+        <variable
+                name="project"
+                type="com.ridvan.apping.model.Project"/>
     </data>
 
     <android.support.v7.widget.CardView
@@ -10,28 +14,32 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp">
 
-        <RelativeLayout
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:padding="8dp">
-
-            <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:adjustViewBounds="true"
-                    android:padding="4dp"
-                    android:scaleType="fitXY"/>
 
             <TextView
                     android:id="@+id/textViewTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:layout_toEndOf="@id/imageView"
                     android:hint="TITLE"
+                    android:text="@{project.name}"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+            <TextView
+                    android:id="@+id/textViewDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:hint="Description"
+                    android:text="@{project.description}"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                     android:textColor="#000000"/>
-        </RelativeLayout>
+        </LinearLayout>
     </android.support.v7.widget.CardView>
 </layout>
